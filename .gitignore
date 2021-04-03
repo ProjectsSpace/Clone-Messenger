@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# others
+.firebase
+.firebaserc
+.firebase.json
+Messenger App Notes.txt
