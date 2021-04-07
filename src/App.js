@@ -41,7 +41,7 @@ function App() {
   // functionality for showing the last message visible
   const scrollToMe = useRef(null)
   useEffect(() => {
-    scrollToMe.current && scrollToMe.current.scrollIntoView()
+    scrollToMe.current && scrollToMe.current.scrollIntoView({ behavior: "smooth" })
   })
 
   useEffect(() => {
