@@ -37,14 +37,12 @@ function App() {
   const [input,setInput] = useState('')
   const [messages, setMessages] = useState([])
   const [userName, setUserName] = useState('')
-
-    // const messagesEndRef = useRef(null);
-    // useEffect(() => {
-    //   if (messagesEndRef && messagesEndRef.current) {
-    //     // messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    //     console.log(messagesEndRef.current)
-    //   }
-    // }, [messages]);
+  
+  // functionality for showing the last message visible
+  const scrollToMe = useRef(null)
+  useEffect(() => {
+    scrollToMe.current && scrollToMe.current.scrollIntoView()
+  })
 
   useEffect(() => {
     setUserName(prompt("Enter Username"))
@@ -95,6 +93,7 @@ function App() {
           </FormControl>
         </form>
       </Box>
+      <div ref={scrollToMe}></div>
     </Container>
   )
 }
